@@ -8,5 +8,9 @@ module Types
     field :role, Integer
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+
+
+    field :tickets, [ Types::TicketType ], null: true
+    field :comments, [ Types::CommentType ], null: true
   end
 end
