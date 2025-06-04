@@ -29,6 +29,7 @@ module Types
       description "Fetch a single ticket by ID"
       argument :id, ID, required: true
     end
+
     def ticket(id:)
       Ticket.find_by(id: id)
     end
