@@ -11,7 +11,7 @@ module Mutations
     field :errors, [ String ], null: false
 
 
-    def resolve(subject:, description:, user_id:)
+    def resolve(subject:, description:, user_id:, status:)
       user = User.find_by(id: user_id)
       return { ticket: nil, errors: [ "User not found" ] } unless user
 
