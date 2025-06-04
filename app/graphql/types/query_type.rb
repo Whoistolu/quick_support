@@ -24,5 +24,13 @@ module Types
     def tickets
       Ticket.all
     end
+
+    field :ticket, Types::TicketType, null: true do
+      description "Fetch a single ticket by ID"
+      argument :id, ID, required: true
+    end
+    def ticket(id:)
+      Ticket.find_by(id: id)
+    end
   end
 end
